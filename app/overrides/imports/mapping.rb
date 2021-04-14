@@ -5,7 +5,7 @@ Deface::Override.new :virtual_path  => 'imports/mapping',
 <fieldset class="box tabular">
     <legend><%= l(:label_import_to_projects) %></legend>
     <div>
-      <%= render :partial => 'user_imports/fields_memberships' %>
+      <%= render :partial => 'imports/fields_memberships' %>
     </div>
   </fieldset>
 EOF

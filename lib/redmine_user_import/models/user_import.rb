@@ -65,6 +65,6 @@ UserImport.prepend RedmineUserImport::UserImport
 # Redefine class method authorized?
 class UserImport < Import
   def self.authorized?(user)
-    user.allowed_to?(:users_import, nil, :global => true)    
+    user.allowed_to?(:users_import, nil, :global => true)
   end
 end

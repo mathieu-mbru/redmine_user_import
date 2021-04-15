@@ -3,8 +3,8 @@ require_dependency 'imports_controller'
 class ImportsController
 	include RedmineAdminActivity::Journalizable if Redmine::Plugin.installed?(:redmine_admin_activity)	
 	
-  def index    
-    @imports = UserImport.order('created_at desc')    
+  def index
+    @imports = UserImport.order('created_at desc')
   end
 
 	def run
@@ -77,7 +77,7 @@ class ImportsController
     member.functions<<(functions - member.functions) if functions.present?
     member.save
     
-    if Redmine::Plugin.installed?(:redmine_admin_activity)          
+    if Redmine::Plugin.installed?(:redmine_admin_activity)
       unless (previous_role_ids.sort == member.roles.pluck(:id).sort && previous_function_ids.sort == member.functions.pluck(:id).sort)        
         add_member_edition_to_journal(member, previous_role_ids, member.roles.pluck(:id), previous_function_ids, member.functions.pluck(:id))
       end

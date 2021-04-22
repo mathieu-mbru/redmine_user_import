@@ -17,9 +17,9 @@ class ImportsController
         create_memberships
         format.html {
           if @import.finished?
-            redirect_to user_import_path(@import)
+            redirect_to import_path(@import)
           else
-            redirect_to user_import_run_path(@import)
+            redirect_to import_run_path(@import)
           end
         }
         format.js
